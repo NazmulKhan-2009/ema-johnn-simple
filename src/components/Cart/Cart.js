@@ -1,5 +1,6 @@
 import React from 'react';
 
+// import "./Cart.css"
 const Cart = (props) => {
   // console.log(props.cart);
 
@@ -9,9 +10,10 @@ const Cart = (props) => {
 
 // way =>2
 let total=0
-for(let i=0;i<cart.length;i++){
-  const pp=cart[i]
-  total=pp.price+total
+for(let i=0; i<cart.length;i++){
+  const product=cart[i]
+  total=product.price * product.quantity +total;
+  
 }
 
 let shippingCost=0
@@ -42,6 +44,11 @@ const tValue=(total+shippingCost+Number(tax)).toFixed(2)
       <p>Shipping Cost : {shippingCost}</p>
       <p>Tax+vat : {tax}</p>
       <p>Total Cost : {tValue}</p>
+      <br/>
+      
+      
+      {props.children}
+      
     </div>
   );
 };
