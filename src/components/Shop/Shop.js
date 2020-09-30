@@ -13,7 +13,7 @@ const [products, setProducts]=useState(first10)
 const [cart, setCart]=useState([])
 useEffect(()=>{
   const saveCart=getDatabaseCart()
-  console.log(saveCart);
+  // console.log(saveCart);
   const productKeys=Object.keys(saveCart)
   const previousCart=productKeys.map(existingKey=>{
     const product=fakeData.find(pd=>pd.key===existingKey)
